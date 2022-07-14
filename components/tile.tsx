@@ -1,4 +1,4 @@
-import React, { useRef, useContext, PropsWithChildren } from "react";
+import React, { useRef, useContext } from "react";
 import { ScrollContext } from "../utils/scroll-observer";
 
 interface WrapperProps {
@@ -51,12 +51,12 @@ export const TileWrapper: React.FC<WrapperProps> = ({
   );
 };
 
-export const TileBackground: React.FC = (props: any) => (
-  <div className="absolute h-full w=full">{props.children}</div>
+export const TileBackground: React.FC<BoxProps> = ({ children }) => (
+  <div className="absolute h-full w=full">{children}</div>
 );
 
-export const TileContent: React.FC = (props: any) => (
-  <div className="sticky top-0 h-screen overflow-hidden">{props.children}</div>
+export const TileContent: React.FC<BoxProps> = ({ children }) => (
+  <div className="sticky top-0 h-screen overflow-hidden">{children}</div>
 );
 
 interface Props {
