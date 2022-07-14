@@ -14,7 +14,7 @@ const About: React.FC = () => {
       </div>
       <div className="container mx-auto px-11 text-center mt-28">
         <h2>Chika & Tatsuya</h2>
-        <div className="mt-10 grid grid-ols-2 md:grid-cols-3 lg:grid-cols04 xl:grid-cols-5 gap-6 lg:gap-20">
+        <div className="mt-10 grid grid-ols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 md:gap-10 lg:gap-30">
           <Member
             id="CT"
             name="Chika Tanaka"

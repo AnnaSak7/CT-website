@@ -14,8 +14,8 @@ const Member: React.FC<Props> = ({ id, name, socialId, link }) => (
     <Image
       src={`/assets/members/${id}.png`}
       alt={name}
-      width={1300}
-      height={1300}
+      width={1000}
+      height={1000}
     />
     <div className="text-2xl xl:text-3xl ">{name}</div>
     <div className="">

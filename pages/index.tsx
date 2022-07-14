@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Masthead from "../components/masthead";
 import About from "../components/about";
+import Appearance from "../components/appearance";
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,8 @@ const Home: NextPage = () => {
 
       <Masthead />
       <About />
+      <Appearance />
+      <Appearance />
     </div>
   );
 };
