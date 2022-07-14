@@ -27,6 +27,14 @@ const Masthead: React.FC = () => {
           <span>Jazz Duo</span> <span>base in NY</span>
         </h2>
       </div>
+      <div className="flex-grow-0 pb-20 md:pb-10 transition-all duration-1000">
+        <Image
+          src="/assets/down-arrow.png"
+          width={250 / 3}
+          height={150 / 3}
+          alt="scroll down"
+        />
+      </div>
     </div>
   );
 };
