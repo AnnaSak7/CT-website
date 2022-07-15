@@ -19,6 +19,7 @@ const Home: NextPage = () => {
       <About />
       <Appearance />
       <Works />
+      <About />
     </div>
   );
 };
