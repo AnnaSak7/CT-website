@@ -1,5 +1,6 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useCallback } from "react";
 import { SizeContext } from "../utils/size-observer";
+import useAnimationFrame from "../utils/use-animation-frame";
 
 interface Props {
   initialOffsetX: number;
@@ -20,6 +21,23 @@ const SliderContainer: React.FC<Props> = ({
   const refContent = useRef<HTMLDivElement>(null);
 
   const enabled = innerWidth < contentWidth;
+
+  useAnimationFrame(
+    enabled,
+    useCallback(() => {
+      const { current: elContainer } = refContainer;
+      const { current: elContent } = refContent;
+      if (elContainer && elContent) {
+        refScrollX.current += 0.5;
+        elContainer.scrollLeft = refScrollX.current;
+        if (elContainer.scrollLeft >= elContent.clientWidth) {
+          refScrollX.current = 0;
+          elContainer.scrollLeft = 0;
+        }
+      }
+    }, [])
+  );
+
   return (
     <div
       ref={refContainer}
@@ -31,5 +49,19 @@ const SliderContainer: React.FC<Props> = ({
     </div>
   );
 };
+
+interface ItemProps {
+  width: number;
+  children: React.ReactNode;
+}
+
+export const SliderItem: React.FC<ItemProps> = ({ children, width }) => (
+  <div
+    className="inline-flex justify-center items-center mx-4"
+    style={{ width }}
+  >
+    {children}
+  </div>
+);
 
 export default SliderContainer;
