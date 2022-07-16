@@ -35,6 +35,9 @@ const Works = () => (
                 height={1200}
                 alt="twitch"
               />
+              <div className="text-gray-500 text-2xl md:text-3xl font-semibold tracking-tight">
+                EST Every Monday 3PM-6PM and Every Friday 11AM-２PM
+              </div>
             </WorkRight>
           </WorkContainer>
         )}

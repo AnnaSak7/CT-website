@@ -5,6 +5,7 @@ import Masthead from "../components/masthead";
 import About from "../components/about";
 import Appearance from "../components/appearance";
 import Works from "../components/works";
+import Telop from "../components/telop";
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
       <About />
       <Appearance />
       <Works />
+      <Telop />
       <About />
     </div>
   );
