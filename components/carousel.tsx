@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useCallback, useEffect } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import { EmblaCarouselType } from "embla-carousel-react";
 import ClassNames from "embla-carousel-class-names";
 import Autoplay from "embla-carousel-autoplay";
-
+import styles from "../styles/carousel.module.css";
 interface ContextValue {
   embla: EmblaCarouselType | undefined;
   selectedIndex: number;
@@ -29,10 +30,24 @@ const Carousel: React.FC<Props> = ({ children, className }) => {
     [ClassNames(), Autoplay()]
   );
 
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi, setSelectedIndex]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+  }, [emblaApi, onSelect]);
+
   return (
     <CarouselContext.Provider value={{ embla: emblaApi, selectedIndex }}>
-      <div ref={viewportRef} className={`w-full overfloew-hidden ${className}`}>
-        <div classNam={`flex`}>{children}</div>
+      <div
+        ref={viewportRef}
+        className={`${styles.viewport} w-full overflow-hidden ${className}`}
+      >
+        <div className={`${styles.container} flex`}>{children}</div>
       </div>
     </CarouselContext.Provider>
   );
