@@ -8,6 +8,7 @@ const Telop: React.FC = () => {
     <section className="bg-white min-h-screen flex flex-col justify-center gap-16 med:gap-32">
       <div className="flex-1"></div>
       <div className="flex flex-col justify-center items-center">
+        <ClientLogos />
         <h3 className="text-3xl lg:text-4xl tracking-tight text-center px-10 !leading-[3.5rem] font-bold">
           Join our{" "}
           <Link href="https://discord.com/invite/2dnCVETE8w">
@@ -21,7 +22,6 @@ const Telop: React.FC = () => {
           </Link>{" "}
           community and learn about our lives, live-streams and more!
         </h3>
-        <ClientLogos />
       </div>
       <div className="flex flex-col justify-center items-center">
         <div className="container mx-auto lg:max-w-[70%] lg:px-10"></div>

@@ -6,6 +6,7 @@ import About from "../components/about";
 import Appearance from "../components/appearance";
 import Works from "../components/works";
 import Telop from "../components/telop";
+import ContactUs from "../components/contactus";
 
 const Home: NextPage = () => {
   return (
@@ -21,7 +22,7 @@ const Home: NextPage = () => {
       <Appearance />
       <Works />
       <Telop />
-      <About />
+      <ContactUs />
     </div>
   );
 };
