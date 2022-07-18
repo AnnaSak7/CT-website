@@ -14,7 +14,7 @@ const ContactUs: React.FC = () => {
     message: "",
   });
 
-  const handleOnChange = useCalback((e) => {
+  const handleOnChange = useCallback((e: any) => {
     e.persist();
     setInputs((prev) => ({
       ...prev,
@@ -27,7 +27,7 @@ const ContactUs: React.FC = () => {
     });
   }, []);
 
-  const handleServerResponse = useCallback((ok, msg) => {
+  const handleServerResponse = useCallback((ok: any, msg: any) => {
     if (ok) {
       setStatus({
         submitted: true,
@@ -49,8 +49,9 @@ const ContactUs: React.FC = () => {
   }, []);
 
   const handleSubmit = useCallback(
-    (e) => {
+    (e: any) => {
       e.preventDefault();
+      console.log("test-env: ", process.env.TEST_URL);
       setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
       axios({
         method: "POST",
@@ -79,41 +80,74 @@ const ContactUs: React.FC = () => {
           />
         </div>
         <h2 className="text-4xl font-bold">Contact Us</h2>
-        <form className="flex flex-col gap-4 mt-16 px-10 lg:mt-20 min-w-full lg:min-w-[500px]">
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            maxLength={128}
-            placeholder="Name"
-            className="bg-black text-white outline-none border-2 border-white rounded-3xl px-8 py-2"
-          />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            maxLength={128}
-            placeholder="Your Email"
-            className="bg-black text-white outline-none border-2 border-white rounded-3xl px-8 py-2"
-          />
-          <textarea
-            name="message"
-            id="message"
-            required
-            maxLength={1048576}
-            placeholder="Additional information"
-            className="bg-black text-white outline-none border-2 border-white rounded-3xl px-8 py-6 min-h-[16em]"
-          ></textarea>
-          <div className="text-center mt-10">
-            <button
-              type="submit"
-              className="bg-white text-black rounded-3xl px-8 py-2"
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-4 mt-16 px-10 lg:mt-20 min-w-full lg:min-w-[500px]"
+        >
+          {status.info.error && (
+            <div
+              className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+              role="alert"
             >
-              Submit
-            </button>
-          </div>
+              <strong className="font-bold">Error</strong>:{" "}
+              <span className="block sm:inline">{status.info.msg}</span>
+            </div>
+          )}
+          {status.submitted ? (
+            <div
+              className="text-white text-xl font-bold px-4 py-3 rounded relative"
+              role="alert"
+            >
+              Your message has been successfully sent. We will contact you soon!
+            </div>
+          ) : (
+            <>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                maxLength={128}
+                placeholder="Name"
+                className="bg-black text-white outline-none border-2 border-white rounded-3xl px-8 py-2"
+                onChange={handleOnChange}
+                value={inputs.name}
+              />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                maxLength={128}
+                placeholder="Your Email"
+                className="bg-black text-white outline-none border-2 border-white rounded-3xl px-8 py-2"
+                onChange={handleOnChange}
+                value={inputs.email}
+              />
+              <textarea
+                name="message"
+                id="message"
+                required
+                maxLength={1048576}
+                placeholder="Additional information"
+                className="bg-black text-white outline-none border-2 border-white rounded-3xl px-8 py-6 min-h-[16em]"
+                onChange={handleOnChange}
+                value={inputs.message}
+              ></textarea>
+              <div className="text-center mt-10">
+                <button
+                  type="submit"
+                  className="bg-white text-black rounded-3xl px-8 py-2"
+                >
+                  {!status.submitting
+                    ? !status.submitted
+                      ? "Submit"
+                      : "Submitted"
+                    : "Submitting..."}
+                </button>
+              </div>
+            </>
+          )}
         </form>
       </div>
     </div>
