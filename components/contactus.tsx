@@ -1,7 +1,71 @@
 import React, { useState, useCallback } from "react";
 import Image from "next/image";
+import axios from "axios";
 
 const ContactUs: React.FC = () => {
+  const [status, setStatus] = useState({
+    submitted: false,
+    submitting: false,
+    info: { error: false, msg: null },
+  });
+  const [inputs, setInputs] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleOnChange = useCalback((e) => {
+    e.persist();
+    setInputs((prev) => ({
+      ...prev,
+      [e.target.id]: e.target.value,
+    }));
+    setStatus({
+      submitted: false,
+      submitting: false,
+      info: { error: false, msg: null },
+    });
+  }, []);
+
+  const handleServerResponse = useCallback((ok, msg) => {
+    if (ok) {
+      setStatus({
+        submitted: true,
+        submitting: false,
+        info: { error: false, msg },
+      });
+      setInputs({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } else {
+      setStatus({
+        submitted: false,
+        submitting: false,
+        info: { error: true, msg },
+      });
+    }
+  }, []);
+
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
+      axios({
+        method: "POST",
+        url: process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT_URL,
+        data: inputs,
+      }).then((_response) => {
+        handleServerResponse(
+          true,
+          "Thank you! Your message has been submitted."
+        );
+      });
+    },
+    [inputs, handleServerResponse]
+  );
+
   return (
     <div className="bg-black text-white flex flex-col justify-center pt-10 min-h-screen">
       <div className="flex-1 flex flex-col justify-center items-center pt-10 lg:pt-6">

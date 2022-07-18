@@ -7,6 +7,7 @@ import Appearance from "../components/appearance";
 import Works from "../components/works";
 import Telop from "../components/telop";
 import ContactUs from "../components/contactus";
+import Footer from "../components/footer";
 
 const Home: NextPage = () => {
   return (
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
       <Works />
       <Telop />
       <ContactUs />
+      <Footer />
     </div>
   );
 };
