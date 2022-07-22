@@ -2,41 +2,41 @@ import React from "react";
 import Image from "next/image";
 import SliderContainer, { SliderItem } from "./slider";
 
-const ClientLogos: React.FC = () => (
+const SocialLogos: React.FC = () => (
   <>
     <SliderContainer className="" contentWidth={1290} initialOffsetX={0}>
-      <SliderItem width={500}>
+      <SliderItem width={100}>
         <Image
-          src="/assets/photos/01.png"
-          width={500}
-          height={200}
+          src="/assets/social/discord.png"
+          width={100}
+          height={50}
           alt="logo"
           objectFit="contain"
         />
       </SliderItem>
-      <SliderItem width={500}>
+      <SliderItem width={100}>
         <Image
-          src="/assets/photos/02.png"
-          width={500}
-          height={200}
+          src="/assets/social/twitch.png"
+          width={100}
+          height={50}
           alt="logo"
           objectFit="contain"
         />
       </SliderItem>
-      <SliderItem width={500}>
+      <SliderItem width={100}>
         <Image
-          src="/assets/photos/03.png"
-          width={500}
-          height={200}
+          src="/assets/social/youtube.png"
+          width={100}
+          height={50}
           alt="logo"
           objectFit="contain"
         />
       </SliderItem>
-      <SliderItem width={500}>
+      <SliderItem width={100}>
         <Image
-          src="/assets/photos/04.png"
-          width={500}
-          height={200}
+          src="/assets/social/twitter.png"
+          width={100}
+          height={50}
           alt="logo"
           objectFit="contain"
         />
@@ -45,4 +45,4 @@ const ClientLogos: React.FC = () => (
   </>
 );
 
-export default ClientLogos;
+export default SocialLogos;

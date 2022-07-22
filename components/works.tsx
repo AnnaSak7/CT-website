@@ -10,7 +10,7 @@ import {
 } from "./work";
 
 const Works = () => (
-  <TileWrapper numOfPages={3}>
+  <TileWrapper numOfPages={2}>
     <TileBackground>
       <WorkBackground />
     </TileBackground>
@@ -65,18 +65,6 @@ const Works = () => (
                 alt="twitch"
               />
             </WorkRight>
-          </WorkContainer>
-        )}
-      ></Tile>
-    </TileContent>
-    <TileContent>
-      <Tile
-        page={2}
-        renderContent={({ progress }) => (
-          <WorkContainer>
-            <WorkLeft progress={progress}>
-              <div>Checkout out Youtube channel</div>
-            </WorkLeft>
           </WorkContainer>
         )}
       ></Tile>

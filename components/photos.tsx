@@ -4,14 +4,14 @@ import CarouselItem from "./carousel-item";
 import Image from "next/image";
 import { WorkLink } from "./work";
 
-const Links: React.FC = () => (
+const Photos: React.FC = () => (
   <Carousel className="py-10 lg:py-20">
     <CarouselItem index={0}>
       <WorkLink href="https://www.instagram.com/monchika1231/?hl=ja">
         <Image
-          src="/assets/social/instagram.png"
-          width={50}
-          height={50}
+          src="/assets/photos/01.png"
+          width={500}
+          height={200}
           alt="logo"
           objectFit="contain"
         />
@@ -20,9 +20,9 @@ const Links: React.FC = () => (
     <CarouselItem index={1}>
       <WorkLink href="https://www.youtube.com/user/chikatanaka12311">
         <Image
-          src="/assets/social/youtube.png"
-          width={50}
-          height={50}
+          src="/assets/photos/02.png"
+          width={500}
+          height={200}
           alt="logo"
           objectFit="contain"
         />
@@ -31,9 +31,9 @@ const Links: React.FC = () => (
     <CarouselItem index={2}>
       <WorkLink href="https://www.twitch.tv/chika_tatsuya">
         <Image
-          src="/assets/social/twitch.png"
-          width={50}
-          height={50}
+          src="/assets/photos/03.png"
+          width={500}
+          height={200}
           alt="logo"
           objectFit="contain"
         />
@@ -42,9 +42,9 @@ const Links: React.FC = () => (
     <CarouselItem index={3}>
       <WorkLink href="https://discord.com/invite/2dnCVETE8w">
         <Image
-          src="/assets/social/discord.png"
-          width={50}
-          height={50}
+          src="/assets/photos/04.png"
+          width={500}
+          height={200}
           alt="logo"
           objectFit="contain"
         />
@@ -53,9 +53,9 @@ const Links: React.FC = () => (
     <CarouselItem index={4}>
       <WorkLink href="https://twitter.com/ChikaTanaka10">
         <Image
-          src="/assets/social/twitter.png"
-          width={50}
-          height={50}
+          src="/assets/photos/04.png"
+          width={500}
+          height={200}
           alt="logo"
           objectFit="contain"
         />
@@ -64,4 +64,4 @@ const Links: React.FC = () => (
   </Carousel>
 );
 
-export default Links;
+export default Photos;
