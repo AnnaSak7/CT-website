@@ -33,7 +33,7 @@ const Masthead: React.FC = () => {
         playsInline
         className="absolute w-full h-full object-cover"
       >
-        <source src="/assets/geometric.mp4" type="video/mp4" />
+        <source src="/assets/main.mov" />
       </video>
       <div
         className={`flex-grow-0 pt-10 transition-opacity duration-1000 ${
