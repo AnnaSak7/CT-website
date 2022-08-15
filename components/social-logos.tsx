@@ -29,7 +29,7 @@ const SocialLogos: React.FC = () => (
     </WorkLink>
     {/* </SliderItem> */}
     {/* <SliderItem width={100}> */}
-    <WorkLink href="https://www.youtube.com/user/chikatanaka12311">
+    <WorkLink href="https://www.youtube.com/channel/UCqXkloivOcpv30kKjzxVa3g">
       <Image
         src="/assets/social/youtube.png"
         width={100}
