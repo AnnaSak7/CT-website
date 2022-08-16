@@ -9,6 +9,15 @@ import {
   WorkRight,
 } from "./work";
 
+const Schedule = () => {
+  fetch("https://api.twitch.tv/helix/schedule?broadcaster_id=chika_tatsuya")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    });
+};
+Schedule();
+
 const Works = () => (
   <TileWrapper numOfPages={2}>
     <TileBackground>
