@@ -18,14 +18,16 @@ const About: React.FC = () => {
           <Member
             id="CT"
             name="Chika Tanaka"
-            socialId="@monchika1231"
+            socialId="monchika1231"
             link="https://www.instagram.com/monchika1231/?hl=ja"
+            bio="Tatsuya Sakurai was born and raised in Yamanashi, Japan, where he studied with renowned jazz guitarist, Takayuki Kato. He later attended Berklee College of Music in Boston where he studied and performed with acclaimed musicians like: Mick Goodrick, Hal Crook, Tim Miller and Jon Damian. He moved to New York City to continue his career as a professional musician. Sakurai plays regularly at clubs in and around New York City, with Bill Crow and recorded “Waiting Room”  with Zawadi Noel."
           />
           <Member
             id="TS"
             name="Tatsuya Sakura"
-            socialId="@tsakurai514"
+            socialId="tsakurai514"
             link="https://www.instagram.com/tsakurai514/?hl=ja"
+            bio="Tatsuya Sakurai was born and raised in Yamanashi, Japan, where he studied with renowned jazz guitarist, Takayuki Kato. He later attended Berklee College of Music in Boston where he studied and performed with acclaimed musicians like: Mick Goodrick, Hal Crook, Tim Miller and Jon Damian. He moved to New York City to continue his career as a professional musician. Sakurai plays regularly at clubs in and around New York City, with Bill Crow and recorded “Waiting Room”  with Zawadi Noel."
           />
         </div>
       </div>
