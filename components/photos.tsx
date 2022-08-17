@@ -4,7 +4,7 @@ import CarouselItem from "./carousel-item";
 import Image from "next/image";
 
 const Photos: React.FC = () => (
-  <Carousel className="py-10 lg:py-20">
+  <Carousel>
     <CarouselItem index={0}>
       <Image
         src="/assets/photos/01.png"

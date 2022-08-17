@@ -12,8 +12,8 @@
 }
 
 .slide {
-  flex: 0 0 grid-auto;
-  max-width: 500px;
+  flex: 0 0 90%;
+  max-width: 600px;
   height: auto;
   /* max-width: min(70% 620px); */
   opacity: 0.5;

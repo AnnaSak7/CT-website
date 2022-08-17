@@ -84,12 +84,13 @@ const Works = () => (
         renderContent={({ progress }) => (
           <WorkContainer>
             <WorkLeft progress={progress}>
-              <div>Join our</div>
+              <div>Support us on</div>
               <div className="text-4xl md:text-5xl font-semibold tracking-tight">
                 <WorkLink href="https://www.patreon.com/chikaandtatsuya?utm_campaign=creatorshare_creator">
                   Patreon
                 </WorkLink>
               </div>
+              <div className="pt-2">and get exclusive items!</div>
             </WorkLeft>
             <WorkRight progress={progress}>
               <Image

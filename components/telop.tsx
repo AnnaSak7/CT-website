@@ -5,7 +5,7 @@ import Photos from "./photos";
 
 const Telop: React.FC = () => {
   return (
-    <section className="bg-white min-h-screen flex flex-col justify-center gap-16 med:gap-32">
+    <section className="bg-white min-h-screen flex flex-col justify-center gap-8 med:gap-12">
       <div className="flex-1"></div>
       <div className="flex flex-col justify-center items-center">
         <h3 className="text-3xl lg:text-4xl tracking-tight text-center px-10 !leading-[3.5rem] font-bold">
