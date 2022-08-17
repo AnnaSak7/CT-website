@@ -19,7 +19,7 @@ const Schedule = () => {
 Schedule();
 
 const Works = () => (
-  <TileWrapper numOfPages={2}>
+  <TileWrapper numOfPages={3}>
     <TileBackground>
       <WorkBackground />
     </TileBackground>
@@ -72,6 +72,32 @@ const Works = () => (
                 width={840}
                 height={1200}
                 alt="twitch"
+              />
+            </WorkRight>
+          </WorkContainer>
+        )}
+      ></Tile>
+    </TileContent>
+    <TileContent>
+      <Tile
+        page={2}
+        renderContent={({ progress }) => (
+          <WorkContainer>
+            <WorkLeft progress={progress}>
+              <div>Join our</div>
+              <div className="text-4xl md:text-5xl font-semibold tracking-tight">
+                <WorkLink href="https://www.patreon.com/chikaandtatsuya?utm_campaign=creatorshare_creator">
+                  Patreon
+                </WorkLink>
+              </div>
+            </WorkLeft>
+            <WorkRight progress={progress}>
+              <Image
+                src="/assets/patreon.png"
+                layout="responsive"
+                width={840}
+                height={700}
+                alt="patreon"
               />
             </WorkRight>
           </WorkContainer>
