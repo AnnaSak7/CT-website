@@ -12,7 +12,7 @@ interface Props {
 }
 
 const Member: React.FC<Props> = ({ id, name, socialId, link, bio }) => (
-  <div>
+  <div className="mb-5">
     <Image
       src={`/assets/members/${id}.png`}
       alt={name}
@@ -30,7 +30,7 @@ const Member: React.FC<Props> = ({ id, name, socialId, link, bio }) => (
           {socialId}
         </a>
       </Link>
-      <p>{bio}</p>
+      <p className="text-justify">{bio}</p>
     </div>
   </div>
 );

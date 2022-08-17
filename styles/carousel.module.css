@@ -13,7 +13,9 @@
 
 .slide {
   flex: 0 0 grid-auto;
-  max-width: min(70% 620px);
+  max-width: 500px;
+  height: auto;
+  /* max-width: min(70% 620px); */
   opacity: 0.5;
   transition: opacity 0.4s;
 }

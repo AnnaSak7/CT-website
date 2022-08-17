@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Masthead from "../components/masthead";
-import About from "../components/about";
+import Bio from "../components/bio";
 import Appearance from "../components/appearance";
 import Works from "../components/works";
 import Telop from "../components/telop";
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 
       <Masthead />
       <Appearance />
-      <About />
+      <Bio />
       <Works />
       <Telop />
       <ContactUs />
