@@ -36,21 +36,21 @@ const Appearance = () => {
             className={s.appearanceText}
             style={{ opacity: opacityForBlock(progress, 0) }}
           >
-            Japanese musicians base in NYC.
+            Japanese musicians based in NYC.
           </div>
           <span
             className={`${s.appearanceText} inline-block after:content-['_']`}
             style={{ opacity: opacityForBlock(progress, 1) }}
           >
-            Tatsuya plays guitar and Chika on vocal. We play Jazz, Japanese City
-            Pop and some originals.
+            Tatsuya plays guitar and Chika on vocal. We perform Jazz, Japanese
+            City Pop and some originals.
           </span>
           <span
             className={`${s.appearanceText} inline-block`}
             style={{ opacity: opacityForBlock(progress, 2) }}
           >
-            We deliver relax and chill vibes. If you dance on a chair that makes
-            us happy.
+            We send out chill and relaxing vibes. It makes us happy if you dance
+            on a chair.
           </span>
         </div>
       </div>
